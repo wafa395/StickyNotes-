@@ -1,5 +1,7 @@
 <?php
 
+// Start the session
+session_start();
 require 'config.php';
 require "MyDb.php";
 
@@ -25,5 +27,12 @@ $result=$note->add($first_name,$last_name);
     
  	header( "location: index.php");
  }
+
+
+// Set session variables
+$_SESSION["first_name"] = $first_name;
+$_SESSION["last_name"] = $last_name;
+
+echo "Session variables are set.";
 
 ?>

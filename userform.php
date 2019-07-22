@@ -1,3 +1,9 @@
+<?php
+// Start the session
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,10 +96,51 @@
 
                                  <br>
 
-                                Nice to meet you
+                                
 
 
+<?php
+// Echo session variables that were set on previous page
+echo "Nice to meet you : " . $_SESSION["first_name"] ."  ". $_SESSION["last_name"] . ".";
+
+?>
+
+
+
+<!--
+
+//code for retrive all users 
+
+<?php
+
+ require 'MyDb.php';
+
+ $note = new MyDb();
+
+ $users = $note->getname();
+
+ ?>
+
+ <table border='1'>
+ <hr><th>id</th><th>Name</th><th>last</th></tr>
+ 
+ <?php
+
+ foreach ($users as $user) {
   
+  echo "<tr>";
+  echo "<td>" . $user['id'] . "</td>";
+  echo "<td>" . $user['first_name'] . "</td>";
+  echo "<td>" . $user['last_name'] . "</td>";
+  echo "</tr>";
+
+ }
+
+?>
+
+</table>
+
+-->
 
                                  <br>
                                  <br>

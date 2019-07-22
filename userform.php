@@ -74,13 +74,26 @@ session_start();
                   <div class="col-xs-6 col-sm-6 col-md-6">
                       <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required >
                     
+
+
                   </div>
                   
 
                   <br>
                   <br>
-                
 
+<div class="col-xs-6 col-sm-6 col-md-6" >
+
+<?php
+// Echo session variables that were set on previous page
+echo "Great  " . $_SESSION["first_name"] ;
+
+?>
+
+</div>
+
+                  <br>
+                  <br>
 
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     

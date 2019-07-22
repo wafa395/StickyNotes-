@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +45,7 @@
 
   <div class="container-fluid">
 
-   <center><h1>Retrieve your notes? Absolutely! </h1></center> </a>
+   <center><h1>Let’s add a new note</h1></center> </a>
      
     </div>
 
@@ -58,77 +57,56 @@
         <div class="col-xs-12 col-sm-8 col-md-12 ">
           <div class="panel panel-default">
             <div class="panel-body">
-              <form role="form">
+              <form role="form" action="addcomment.php" method='post' >
 
                 
+             Please let me know your first name:
 
+
+
+                <div class="row">
 
                   <div class="col-xs-6 col-sm-6 col-md-6">
-
-                       Please let me know your first name:
-
                       <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required >
-                    </div>
-<br><br>
+                    
 
-                  
+                  </div>
                   
 
                   <br>
                   <br>
                 
-              </form>
 
 
-              <div class="col-md-2 col-sm-6 hero-feature">
-                  <div class="thumbnail">
-                    <div class="caption">
-                      
-            
 
-                        your note : 
+                       <div class="col-xs-6 col-sm-6 col-md-6">
+	
 
 
-<?php
+                         <br>
 
- require 'MyDb.php';
+                          <textarea cols='50' rows='10' name='comment' id="comment" ></textarea>
 
- $note = new MyDb();
+                         <br><br>
 
- $comments = $note->getN();
+                           <input type='submit' name='submit' value='comment' >
 
- //print_r($students);
- ?>
+                        </div>
 
- <table border='1'>
- <hr><th>id</th><th>Name</th><th>note</th><th>data</th></tr>
+
+                                <br>
  
- <?php
-
- foreach ($comments as $comment) {
-  
-  echo "<tr>";
-  echo "<td>" . $comment['id'] . "</td>";
-  echo "<td>" . $comment['first_name'] . "</td>";
-  echo "<td>" . $comment['comment'] . "</td>";
-  echo "<td>" . $comment['date'] . "</td>";
-  echo "</tr>";
-
- }
-
-?>
-
-</table>
 
 
-                      
-                    </div>
+
                 </div>
-                </div>
+                                 <br>
 
+                                Done! 
 
+                                 <br>
+                                 <br>
 
-</table>
 
 <button onclick="goBack()">Go Back</button>
 
@@ -138,18 +116,21 @@ function goBack() {
   window.history.back();
 }
 </script>
+                             
+                       </form>
+                                
+                </div>
+                
 
+
+
+                
+             
             </div>
-
-            
-
-
           </div>
-
         </div>
       </div>
     </div>
-
 
 </body>
 </html>

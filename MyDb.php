@@ -92,6 +92,24 @@ public function getcomment(){
  	}
 
 
+public function getname(){
+
+ 		$sql = "select * from user";
+
+ 		$conn = $this->connect();
+ 		$result = $conn->query($sql);
+
+ 		$rows = array();
+
+ 		while($row = $result-> fetch_assoc()){
+
+ 			$rows[] = $row;
+
+ 		}
+
+ 		return $rows;
+
+ 	}
 
 /*public function getcommentbyname($first_name){
  		

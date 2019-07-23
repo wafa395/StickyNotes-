@@ -1,4 +1,7 @@
-
+<?php
+// Start the session
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -97,7 +100,7 @@
 
  $comments = $note->getN();
 
- //print_r($students);
+
  ?>
 
  <table border='1'>
@@ -106,6 +109,9 @@
  <?php
 
  foreach ($comments as $comment) {
+
+  if ($comment['first_name'] == $_SESSION["first_name"]) {
+
   
   echo "<tr>";
   echo "<td>" . $comment['id'] . "</td>";
@@ -115,7 +121,7 @@
   echo "</tr>";
 
  }
-
+}
 ?>
 
 </table>

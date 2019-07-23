@@ -120,9 +120,12 @@ echo "Nice to meet you : " . $_SESSION["first_name"] ."  ". $_SESSION["last_name
 
 
 
-<!--
 
-//code for retrive all users 
+
+
+<!--
+ 
+ // code to see if the user has a record 
 
 <?php
 
@@ -132,27 +135,20 @@ echo "Nice to meet you : " . $_SESSION["first_name"] ."  ". $_SESSION["last_name
 
  $users = $note->getname();
 
- ?>
-
- <table border='1'>
- <hr><th>id</th><th>Name</th><th>last</th></tr>
  
- <?php
-
  foreach ($users as $user) {
   
-  echo "<tr>";
-  echo "<td>" . $user['id'] . "</td>";
-  echo "<td>" . $user['first_name'] . "</td>";
-  echo "<td>" . $user['last_name'] . "</td>";
-  echo "</tr>";
+  if ($user['first_name'] == $_SESSION["first_name"]) {
+
+  echo "found"; 
+
+  }
+
+ 
 
  }
 
 ?>
-
-</table>
-
 -->
 
                                  <br>

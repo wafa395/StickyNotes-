@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -60,14 +64,14 @@
               <form role="form" action="addcomment.php" method='post' >
 
                 
-             Please let me know your first name:
+             Please enter your full name :
 
 
 
                 <div class="row">
 
                   <div class="col-xs-6 col-sm-6 col-md-6">
-                      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required >
+                      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Full Name" required >
                     
 
                   </div>
@@ -75,13 +79,44 @@
 
                   <br>
                   <br>
-                
+                    
 
+                    <div class="col-xs-6 col-sm-6 col-md-6" >
+
+                      
+  <?php
+
+  /*require 'MyDb.php';
+
+ $note = new MyDb();
+
+ $users = $note->getname();
+
+ 
+ foreach ($users as $user) {
+  
+  if ($user['first_name'] == $_SESSION["first_name"]) {
+
+  echo "found"; 
+
+  }
+
+ }*/
+
+                      // Echo session variables that were set on previous page
+                      echo "Ready! " . $_SESSION["first_name"] ."  ". $_SESSION["last_name"] . ".";
+
+                         ?>
+
+                    </div>
+ 
+                        <br>
+                        <br>
 
 
                        <div class="col-xs-6 col-sm-6 col-md-6">
 	
-
+                         Please enter your note:
 
                          <br>
 
@@ -89,7 +124,7 @@
 
                          <br><br>
 
-                           <input type='submit' name='submit' value='comment' >
+                           <input type='submit' name='submit' value='Note' >
 
                         </div>
 

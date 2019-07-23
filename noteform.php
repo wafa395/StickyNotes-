@@ -143,14 +143,8 @@ session_start();
                                  <br>
 
 
-<button onclick="goBack()">Go Back</button>
+<button > <a href=" index.php"> Go Back</button>
 
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
                              
                        </form>
                                 

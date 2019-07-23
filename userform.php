@@ -72,7 +72,7 @@ session_start();
                 <div class="row">
 
                   <div class="col-xs-6 col-sm-6 col-md-6">
-                      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" required >
+                      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name"  >
                     
 
 
@@ -100,7 +100,7 @@ echo "Great  " . $_SESSION["first_name"] ;
                      Now please enter your last name:
 
 
-                      <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" required>
+                      <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" >
                   </div>
                 </div>
                                  <br>
@@ -157,14 +157,10 @@ echo "Nice to meet you : " . $_SESSION["first_name"] ."  ". $_SESSION["last_name
 
                        <input type="submit" name="submit" value="register"  >
 
-                       <button onclick="goBack()">Go Back</button>
+                       <button> <a href="index.php"> Go Back</button>
 
 
-                        <script>
-                        function goBack() {
-                        window.history.back();
-                        }
-                        </script>
+                       
 
 
                 </div>

@@ -37,7 +37,44 @@ session_start();
   box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
+ .sticky {
 
+  right: 0;
+  z-index: 150;
+  transform: rotate(5deg);
+  width: 200px;
+  min-height: 150px;
+  margin: -10px 10px 10px;
+  padding: 10px;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive;
+  font-size: 14px;
+  color: #000;
+  background: #FFC0CB;
+  box-shadow: -2px 2px 2px rgba(0,0,0,0.3);
+  float: left;
+}
+
+.sticky:before, .sticky:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 0;
+}
+.sticky:before {
+  border-top: solid 8px #fff;
+  border-right: solid 8px #fff;
+  border-left: solid 8px transparent;
+  border-bottom: solid 8px transparent;
+}
+.sticky:after {
+  border-bottom: solid 8px #dddd33;
+  border-left: solid 8px #dddd33;
+  border-right: solid 8px transparent;
+  border-top: solid 8px transparent;
+}
   </style>
 </head>
 
@@ -63,28 +100,19 @@ session_start();
             <div class="panel-body">
               <form role="form">
 
-                
+             
+  <?php
+// Echo session variables that were set on previous page
+echo "<b> your note : </b> " . $_SESSION["first_name"] ."  ". $_SESSION["last_name"] . ".";
+
+?>
+  
+                         
 
 
-                  
-<br><br>
-
-                  
-                  
-
-                  <br>
-                  <br>
-                
-              </form>
-
-
-              <div class="col-md-2 col-sm-6 hero-feature">
-                  <div class="thumbnail">
-                    <div class="caption">
-                      
-            
-
-                        your note : 
+                        <br>
+                        <br>
+                        <br>
 
 
 <?php
@@ -96,60 +124,43 @@ session_start();
  $comments = $note->getN();
 
 
- ?>
-
- <table border='1'>
- <hr><th>id</th><th>Name</th><th>note</th><th>data</th></tr>
- 
- <?php
 
  foreach ($comments as $comment) {
 
-  if ($comment['first_name'] == $_SESSION["first_name"]) {
-
+ if ($comment['first_name'] == $_SESSION["first_name"]) {
   
-  echo "<tr>";
-  echo "<td>" . $comment['id'] . "</td>";
-  echo "<td>" . $comment['first_name'] . "</td>";
-  echo "<td>" . $comment['comment'] . "</td>";
-  echo "<td>" . $comment['date'] . "</td>";
-  echo "</tr>";
+
+  echo '<div class = sticky >';
+  echo "<b> Date :</b>"  . $comment['date'] . "<br>"  ; 
+  echo " <b> Note : </b> "  . $comment['comment'];
+  echo '</div>';
+  echo '<br>';
+  echo '<br>';
+  echo '<br>';
+
+
 
  }
 }
 ?>
 
-</table>
+
+                        
+ 
+                  <br>
+                  <br>
+ 
+                   <button ><a href="index.php" > Go Back </a> </button>
+
+ 
+       </form>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
 
 
-                      
-                    </div>
-                </div>
-                </div>
-
-
-
-</table>
-
-<button onclick="goBack()">Go Back</button>
-
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
-
-            </div>
-
-            
-
-
-          </div>
-
-        </div>
-      </div>
-    </div>
 
 
 </body>

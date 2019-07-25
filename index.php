@@ -68,12 +68,23 @@
        <br><br>
 
 
-        <li><a href="userform.php">Add new user </a></li><br>
-        <li><a href="noteform.php">Add new note </a></li><br>
-        <li><a href="view.php"> View notes for a specific user</a></li><br>
-        <li><a href="javascript:window.close();">Exit</a></li> 
-        
-        
+       
+
+        <li><a href="userform.php">Add new user </a></li><br><!-- when we click on it , it will go to the user form  -->
+        <li><a href="noteform.php">Add new note </a></li><br><!-- when we click on it , it will go to the note form  -->
+        <li><a href="view.php"> View notes for a specific user</a></li><br><!-- when we click on it , it will go to the user note -->
+        <li><a href="javascript:window.close();">Exit</a></li> <!-- when we click on it , it will go to the user form  -->
+
+
+
+ <!-- <button onclick="closeWin()">Exit</button>
+<script>
+var myWindow;
+function closeWin() {
+  myWindow.close();
+}
+</script>
+-->
              
        
        </ol>

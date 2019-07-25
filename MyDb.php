@@ -36,9 +36,13 @@ public function add($first_name,$last_name){
  		return $result;
  	}
 
-  
-    public function addcomment($first_name,$comment){
 
+  
+    public function addcomment($comment){
+
+    session_start();
+
+    $first_name = $_SESSION["first_name"]  ;
 
 
     $sql = "insert into comment (first_name,comment,date) values ('$first_name','$comment',CURRENT_TIMESTAMP )";
@@ -53,6 +57,7 @@ public function add($first_name,$last_name){
 
 
 public function getcomment(){
+
 
  		$sql = "select * from comment";
 

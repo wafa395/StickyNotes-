@@ -64,17 +64,7 @@ session_start();
               <form role="form" action="addcomment.php" method='post' >
 
                 
-             Please enter your full name :
-
-
-
-                <div class="row">
-
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                      <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Full Name" required >
-                    
-
-                  </div>
+             
                   
 
                   <br>
@@ -131,11 +121,7 @@ session_start();
 
                                 <br>
  
-
-
-
-                </div>
-                                 <br>
+ <br>
 
                                 Done! 
 
@@ -143,7 +129,11 @@ session_start();
                                  <br>
 
 
-<button > <a href=" index.php"> Go Back</button>
+                       <button > <a href=" index.php"> Go Back</button>
+
+
+                </div>
+                                
 
                              
                        </form>
